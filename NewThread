@@ -1,0 +1,24 @@
+public class NewThread implements Runnable {
+        Thread t ;
+        public NewThread() {
+               // TODO Auto-generated constructor stub
+               t= new Thread (this, "Demo Thread");
+               System. out. println("Child thread: " +t );
+               t. start();
+        }
+        @Override
+        public void run() {
+               // TODO Auto-generated method stub
+               try {
+                      for(int i=5;i>0;i--){
+                            System. out. println("Child Thread" +i );
+                            Thread. sleep(500 );
+                      }
+               } catch (InterruptedException e) {
+                      // TODO: handle exception
+                      System. out. println("Exiting child thread." );
+               }
+
+        }
+
+}
